@@ -8,4 +8,3 @@
 	$mysql->query("DELETE FROM `bookmarks` WHERE `id_person` = '$id_person' AND `id_book` = '$id_book_clear_mark'");
 	$mysql->close();
 	header('Location: ' . $_SERVER['HTTP_REFERER']);
-?>

@@ -18,13 +18,13 @@
 ?>	
 	<div class="Products">
 		<form action="../books/book_<?=$search_book['id_book']?>.php" method="post">
-			<center><input type="image" class="imgProduct" src="../img/Products/<?=$search_book['id_book']?>.jpg" /></center>
+			<div style="text-align: center;"><input type="image" class="imgProduct" src="../img/Products/<?=$search_book['id_book']?>.jpg" /></div>
 		</form>
 		
-		<center>
+		<div style="text-align: center;">
 			<p class="nameProduct"><?php echo $search_book['name_book']?></p>
 			<p id="author_book"><?php echo $search_book["author"];?></p>
-		</center>
+		</div>
 		
 		<?php 
 			if($_COOKIE['user'] != ''):

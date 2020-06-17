@@ -8,4 +8,3 @@
 	$mysql->query("DELETE FROM `basket` WHERE `id_person` = '$id_person' AND `id_book` = '$id_book_to_clear'");
 	$mysql->close();
 	header('Location: /buy/basket.php');
-?>

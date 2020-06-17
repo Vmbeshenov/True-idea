@@ -9,11 +9,11 @@ class Enc {
 		);
 		$file_name = $login . "_private.txt";
 		$res = openssl_pkey_new($config);
-		$privKey = '';
-		openssl_pkey_export($res,$privKey);
+		$privateKey = '';
+		openssl_pkey_export($res,$privateKey);
 
 		$fpr = fopen($file_name,"w");
-		fwrite($fpr,$privKey);
+		fwrite($fpr,$privateKey);
 		fclose($fpr);
 
 		$arr = array(
@@ -22,12 +22,12 @@ class Enc {
 			"localityName" => "Kazan",
 			"organizationName" => "True idea",
 			"organizationalUnitName" => "True idea Books",
-			"commonName" => "www.trueidea",
+			"commonName" => "www.true-idea",
 			"emailAddress" => "trueidea@gmail.com"
 		);
 		
-		$csr = openssl_csr_new($arr,$privKey);
-		$cert = openssl_csr_sign($csr,NULL, $privKey,365);
+		$csr = openssl_csr_new($arr,$privateKey);
+		$cert = openssl_csr_sign($csr,NULL, $privateKey,365);
 		openssl_x509_export($cert,$str_cert);
 
 		$public_key = openssl_pkey_get_public($str_cert);
@@ -39,7 +39,7 @@ class Enc {
 		fwrite($fpr1,$public_key_string);
 		fclose($fpr1);
 
-		return array('private'=>$privKey,'public'=>$public_key_string);
+		return array('private'=>$privateKey,'public'=>$public_key_string);
 	}
 	
 	public function my_enc($str, $login) {
@@ -64,4 +64,3 @@ class Enc {
 		return $result;
 	}
 }
-?>

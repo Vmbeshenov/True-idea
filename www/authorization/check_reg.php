@@ -34,10 +34,10 @@
 	$public_key_server = $keys_server['public'];
 	
 	//Шифрование пароля с помощью открытого ключа сервера
-	openssl_public_encrypt($password,$password_crip,$public_key_server);
-	$password_crip = base64_encode($password_crip);
+	openssl_public_encrypt($password,$password_crypt,$public_key_server);
+	$password_crypt = base64_encode($password_crypt);
 	//Отправка открытого ключа на сервер	
-	$mysql->query("INSERT INTO `users` (`login`, `password`, `name`, `email`, `public_key`) VALUES('$login', '$password_crip', '$name', '$email', '$public_key') ");
+	$mysql->query("INSERT INTO `users` (`login`, `password`, `name`, `email`, `public_key`) VALUES('$login', '$password_crypt', '$name', '$email', '$public_key') ");
 	
 	//Авторизация
 	$result = $mysql->query("SELECT * FROM `users` WHERE `login` = '$login'");
@@ -47,4 +47,3 @@
 	
 	$mysql->close();
 	header('Location: /main');
-?>

@@ -1,21 +1,22 @@
 <?php $title="Интернет-магазин книг «True idea»"; require "../header/header.php"; ?>
 
 <div class="content" id="content_main">
-	<script type="text/javacript">
-	var q = 0;
-	function change_show(){
+	<script type="text/javascript">
+        let q = 0;
+
+        function change_show(){
 		q++;
 	}
 	</script>
 	
 	<div class="showcase_block">	
-		<input type="image" class="showcase_block_img" src="../img/99.jpg" />
+		<input type="image" class="showcase_block_img" src="../img/main_page.jpg" />
 		<span class="showcase_text" id ="showcase_text_First_row">True idea</span><br />
 		<span class="showcase_text" id ="showcase_text_Second_row">Книжный интернет-магазин!</span>	
 	</div>
 	<div class="Main_list_block">
 		<h2 class ="Main_list_header">Новинки недели</h2>		
-		<center><hr class="Main_list_hr" /></center>
+		<div style="text-align: center;"><hr class="Main_list_hr" /></div>
 		<?php 
 		$mysql_book = new mysqli('localhost', 'root', '', 'shop');
 		$mysql_book->query("SET NAMES 'utf8'");	
@@ -26,12 +27,12 @@
 		?>		
 		<div class="Products_main">
 		<form action="../books/book_<?=$id_book?>.php" method="post">
-			<center><input type="image" class="imgProduct_main" src="../img/Products/<?=$id_book?>.jpg" /></center>
+			<div style="text-align: center;"><input type="image" class="imgProduct_main" src="../img/Products/<?=$id_book?>.jpg" /></div>
 		</form>		
-		<center>
+		<div style="text-align: center;">
 			<p class="nameProduct_main"><?php echo $row["name_book"];?></p>
 			<p id="author_book_main"><?php echo $row["author"];?></p>
-		</center>		
+		</div>
 		<?php 
 			if($_COOKIE['user'] != ''):
 		?>		
@@ -53,7 +54,7 @@
 	</div>
 	<div class="Main_list_block">
 		<h2 class ="Main_list_header">Популярное</h2>		
-		<center><hr class="Main_list_hr" /></center>
+		<div style="text-align: center;"><hr class="Main_list_hr" /></div>
 		<?php 
 		for($i = 1; $i < 11; $i+=2):
 		$id_book  = ($i + 1);
@@ -62,12 +63,12 @@
 		?>		
 		<div class="Products_main">
 		<form action="../books/book_<?=$id_book?>.php" method="post">
-			<center><input type="image" class="imgProduct_main" src="../img/Products/<?=$id_book?>.jpg" /></center>
+			<div style="text-align: center;"><input type="image" class="imgProduct_main" src="../img/Products/<?=$id_book?>.jpg" /></div>
 		</form>		
-		<center>
+		<div style="text-align: center;">
 			<p class="nameProduct_main"><?php echo $row["name_book"];?></p>
 			<p id="author_book_main"><?php echo $row["author"];?></p>
-		</center>		
+		</div>
 		<?php 
 			if($_COOKIE['user'] != ''):
 		?>		

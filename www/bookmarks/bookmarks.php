@@ -21,13 +21,13 @@
 		?>
 		<div class="Products">
 		<form action="../books/book_<?=$id_book?>.php" method="post">
-			<center><input type="image" class="imgProduct" src="../img/Products/<?=$id_book?>.jpg" /></center>
+			<div style="text-align: center;"><input type="image" class="imgProduct" src="../img/Products/<?=$id_book?>.jpg" /></div>
 		</form>
 		
-		<center>
+		<div style="text-align: center;">
 			<p class="nameProduct"><?php echo $row_bookmarks["name_book"];?></p>
 			<p id="author_book"><?php echo $row_bookmarks["author"];?></p>
-		</center>	
+		</div>
 		<span class="ProductCost"><?php echo $row_bookmarks["price"];?> ₽</span>
 		
 		<form action="../buy/add_book_to_basket.php" method="post">

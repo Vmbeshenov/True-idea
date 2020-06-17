@@ -14,13 +14,13 @@
 	
 	<div class="Products">
 		<form action="../books/book_<?=$id_book?>.php" method="post">
-			<center><input type="image" class="imgProduct" src="../img/Products/<?=$id_book?>.jpg" /></center>
+			<div style="text-align: center;"><input type="image" class="imgProduct" src="../img/Products/<?=$id_book?>.jpg" /></div>
 		</form>
 		
-		<center>
+		<div style="text-align: center;">
 			<p class="nameProduct"><?php echo $row["name_book"];?></p>
 			<p id="author_book"><?php echo $row["author"];?></p>
-		</center>
+		</div>
 		
 		<?php 
 			if($_COOKIE['user'] != ''):

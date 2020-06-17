@@ -61,8 +61,8 @@
 		</form>
 		<?php endif; ?>	
 		<div class="text_description">
-		<p id="annotasia">Аннотация</p><br />
-		<span class="annotasia_text"><?php echo $row["description"];?></span>
+		<p id="annotation">Аннотация</p><br />
+		<span class="annotation_text"><?php echo $row["description"];?></span>
 		</div>
 </div>
 <?php $mysql_book->close();	?>

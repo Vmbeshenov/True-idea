@@ -5,4 +5,3 @@
 	$mysql->query("DELETE FROM `basket` WHERE `id_person` = '$id_person'");
 	$mysql->close();
 	header('Location: /buy/basket.php');
-?>

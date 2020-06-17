@@ -33,7 +33,7 @@
 		if(!$error){
 			$subject = "=?utf-8?B?".base64_encode($subject)."?=";
 			$header = "From: $email\r\nReply-to: $email\r\nContent-type: text/plain; charset=utf-8\r\n";
-			mail ($name, $subject, $message, $headers);
+			mail ($name, $subject, $message);
 			header("Location: index.php");
 			exit;
 		}

@@ -31,4 +31,3 @@
 	setcookie('id_person', $user['id'], time() + (3600 * 24), "/");
 	$mysql->close();
 	header('Location: /main');
-?>

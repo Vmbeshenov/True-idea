@@ -7,4 +7,3 @@
 	$mysql->query("DELETE FROM `bookmarks` WHERE `id_person` = '$id_person'");
 	$mysql->close();
 	header('Location: /bookmarks/bookmarks.php');
-?>

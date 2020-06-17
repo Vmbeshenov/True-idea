@@ -15,7 +15,6 @@
 	$result = $mysql->query("SELECT * FROM `bank_accounts` WHERE `card_number` = '$card_number'");
 	$user = $result->fetch_assoc();
 	if(count($user) == 0) {
-		//header('Location: pay.order.php');
 		echo "Карта не найдена";
 		exit();
 	}
@@ -71,4 +70,3 @@
 	$mysql->close();
 	$mysql_shop->close();
 	header('Location: pay_success.php');
-?>

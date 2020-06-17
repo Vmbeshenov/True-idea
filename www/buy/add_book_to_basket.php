@@ -13,4 +13,3 @@
 	}
 	$mysql->close();
 	header('Location: /buy/basket.php');
-?>
